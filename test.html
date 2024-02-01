@@ -52,9 +52,10 @@ function calculerPourcentageEcoule() {
 function miseAJourCompteur() {
     var tempsRestant = calculerTempsRestant();
 	var pourcentageEcoule = calculerPourcentageEcoule();
+	var tempsRestantFormatte = tempsRestant.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
     // Mettre à jour l'affichage du compteur sur la page
-    document.getElementById('compteur').innerText = "Temps restant à vivre en secondes : " + tempsRestant.toString() + " s";
+    document.getElementById('compteur').innerText = "Temps restant à vivre en secondes : " + tempsRestantFormatte.toString() + " s";
 	document.getElementById('avancement').innerText = `Avancement : ${pourcentageEcoule}%`;
 
 
